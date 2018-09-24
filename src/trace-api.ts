@@ -18,6 +18,7 @@ import * as is from 'is';
 import * as uuid from 'uuid';
 
 import {cls, RootContext} from './cls';
+import {CLSMechanism} from './config';
 import {Constants, SpanType} from './constants';
 import {Logger} from './logger';
 import {Func, RootSpan, RootSpanOptions, Span, SpanOptions, Tracer} from './plugin-types';
@@ -33,6 +34,7 @@ import * as util from './util';
  */
 export interface StackdriverTracerConfig extends
     TracingPolicy.TracePolicyConfig {
+  clsMechanism?: CLSMechanism;
   enhancedDatabaseReporting: boolean;
   ignoreContextHeader: boolean;
   rootSpanNameOverride: (path: string) => string;
